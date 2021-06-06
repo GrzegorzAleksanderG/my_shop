@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import SearchIcon from '@material-ui/icons/Search';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import InputBase from '@material-ui/core/InputBase';
 
 
@@ -24,6 +25,12 @@ const MenuBar = () => {
                         <AccountCircle />
                         <Typography variant="h6" >
                             Account
+                        </Typography>
+                    </IconButton>
+                    <IconButton color="inherit">
+                        <ShoppingCartIcon />
+                        <Typography variant="h6" >
+                            Cart
                         </Typography>
                     </IconButton>
                 </Toolbar>
