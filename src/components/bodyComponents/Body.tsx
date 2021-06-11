@@ -1,11 +1,11 @@
 import {
-    BrowserRouter,
     Switch,
     Route
   } from "react-router-dom";
 import LoginScreen from "./loginPage/LoginScreen";
 import RegistrationScreen from './registrationPage/RegistrationScreen';
 import ArticlesList from './articlesListPage/ArticlesList';
+import Cart from './cartPage/Cart';
 
 const Body = () => {
     return (
@@ -20,6 +20,9 @@ const Body = () => {
                     </Route>
                     <Route path="/articles">
                         <ArticlesList />
+                    </Route>
+                    <Route path="/cart">
+                        <Cart />
                     </Route>
                 </Switch>
             </div>

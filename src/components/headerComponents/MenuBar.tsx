@@ -10,9 +10,19 @@ import Popper from '@material-ui/core/Popper';
 import {
     Link
 } from "react-router-dom";
+import { useState } from 'react';
+import "./MenuBar.css";
 
 
 const MenuBar = () => {
+
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const open = Boolean(anchorEl);
+
+    const handlePopper = (e : any) => {
+        setAnchorEl(anchorEl ? null : e.currentTarget);
+    } 
 
     return (
         <div>
@@ -28,18 +38,20 @@ const MenuBar = () => {
                             <SearchIcon />
                         </Link>
                     </IconButton>
-                    <IconButton color="inherit">
+                    <IconButton color="inherit" onClick={(e) => handlePopper(e)}>
                         <AccountCircle />
                         <Typography variant="h6" >
                             Account
                         </Typography>
-                        <Popper id={"simple-popper"} open={true} anchorEl={null}>
-                            <div>The content of the Popper.</div>
-                            {/* TODO: this should work */}
+                        <Popper id={"simple-popper"} open={open} anchorEl={anchorEl}>
+                            <Link to="/login"><div className="poper-item">Log in</div></Link>
+                            <Link to="/registration"><div className="poper-item">Register</div></Link>
                         </Popper>
                     </IconButton>
                     <IconButton color="inherit">
-                        <ShoppingCartIcon />
+                        <Link to="/cart">
+                            <ShoppingCartIcon />
+                        </Link>
                         <Typography variant="h6" >
                             Cart
                         </Typography>
