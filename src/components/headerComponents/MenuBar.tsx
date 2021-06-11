@@ -20,9 +20,9 @@ const MenuBar = () => {
 
     const open = Boolean(anchorEl);
 
-    const handlePopper = (e : any) => {
+    const handlePopper = (e: any) => {
         setAnchorEl(anchorEl ? null : e.currentTarget);
-    } 
+    }
 
     return (
         <div>
@@ -48,14 +48,16 @@ const MenuBar = () => {
                             <Link to="/registration"><div className="poper-item">Register</div></Link>
                         </Popper>
                     </IconButton>
-                    <IconButton color="inherit">
-                        <Link to="/cart">
+                    <Link to="/cart">
+                        <IconButton color="inherit">
+
                             <ShoppingCartIcon />
-                        </Link>
-                        <Typography variant="h6" >
-                            Cart
-                        </Typography>
-                    </IconButton>
+
+                            <Typography variant="h6" >
+                                Cart
+                            </Typography>
+                        </IconButton>
+                    </Link>
                 </Toolbar>
             </AppBar>
         </div>
