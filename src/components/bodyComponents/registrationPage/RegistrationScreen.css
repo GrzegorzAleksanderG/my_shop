@@ -1,9 +1,9 @@
-div.div-login-wrapper{
+div.div-registration-wrapper{
     background-color: palegoldenrod;
     width: 30%;
     margin: auto;
 }
 
-.MuiButton-contained.submit-login{
+.MuiButton-contained.submit-registration{
     background-color: goldenrod;
 }
