@@ -1,5 +1,5 @@
 import './App.css';
-import { MainWrapper } from './components/MainWrapper.tsx';
+import MainWrapper from './components/MainWrapper.tsx';
 
 function App() {
   return (

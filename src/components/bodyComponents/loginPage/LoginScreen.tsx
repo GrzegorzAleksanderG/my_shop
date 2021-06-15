@@ -5,7 +5,6 @@ const LoginScreen = () => {
 
     return (
         <div className="div-login-wrapper">
-            Log in
             <FormGroup>
                 <FormControl>
                     <InputLabel htmlFor="my-email">Email address</InputLabel>

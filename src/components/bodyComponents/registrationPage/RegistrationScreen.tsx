@@ -4,7 +4,6 @@ import "./RegistrationScreen.css";
 const RegistrationScreen = () => {
     return (
         <div className="div-registration-wrapper">
-            Register
             <FormGroup>
                 <FormControl>
                     <InputLabel htmlFor="my-email">Email address</InputLabel>
