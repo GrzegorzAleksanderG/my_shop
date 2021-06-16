@@ -4,7 +4,7 @@ const RegistrationTest = ({ parameters }: any) => {
     const entries = urlParams.entries();
     return (
         <div>
-            parameters : {entries} // zmienić: hasło nie może być w url
+            parameters : {entries} {/*zmienić: hasło nie może być w url*/}
         </div>
     )
 }
