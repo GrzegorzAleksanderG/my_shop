@@ -1,0 +1,10 @@
+div.div-articles-wrapper{
+    background-color: palegoldenrod;
+    width: 80%;
+    height: 500px;
+    margin: auto;
+}
+
+.MuiDataGrid-row:hover{
+    background-color: goldenrod !important;
+}

@@ -7,7 +7,7 @@ const RegistrationScreen = () => {
     const { register, handleSubmit } = useForm();
 
     const handleOnSubmit = async (data: any) => {
-
+// here configure redux-saga dispatch action TODO
     }
 
     return (
