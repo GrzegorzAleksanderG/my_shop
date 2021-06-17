@@ -1,3 +1,5 @@
+import { connect } from "react-redux";
+
 const Cart = () => {
 
 
@@ -8,4 +10,4 @@ const Cart = () => {
     )
 
 }
-export default Cart;
+export default connect()(Cart);

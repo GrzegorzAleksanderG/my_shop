@@ -1,5 +1,6 @@
 import { FormControl, FormGroup, InputLabel, Input, FormHelperText, Button } from '@material-ui/core';
 import { useForm } from 'react-hook-form';
+import { connect } from 'react-redux';
 import "./LoginScreen.css";
 
 const LoginScreen = () => {
@@ -30,4 +31,4 @@ const LoginScreen = () => {
         </div>
     )
 }
-export default LoginScreen;
+export default connect()(LoginScreen);

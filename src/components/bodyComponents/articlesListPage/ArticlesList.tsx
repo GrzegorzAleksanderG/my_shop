@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { DataGrid, GridRowsProp, GridColDef } from '@material-ui/data-grid';
 import './ArticlesList.css'
+import { connect } from "react-redux";
 
 const ArticlesList = () => {
 
@@ -9,33 +10,34 @@ const ArticlesList = () => {
     }, [])
 
     const rows: GridRowsProp = [ //tmp
-        { id: 1, col1: 'Hello', col2: 'World' },
-        { id: 2, col1: 'XGrid', col2: 'is Awesome' },
-        { id: 3, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 4, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 5, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 6, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 7, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 8, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 9, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 10, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 11, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 12, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 13, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 14, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 15, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 16, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 17, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 18, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 19, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 20, col1: 'Material-UI', col2: 'is Amazing' },
-        { id: 21, col1: 'Material-UI', col2: 'is Amazing' },
+        { id: 1, name: 'Katana', description: 'xxxxx', price: 150 },
+        { id: 2, name: 'Baton', description: 'yyyyyyy', price: 150 },
+        { id: 3, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 4, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 5, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 6, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 7, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 8, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 9, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 10, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 11, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 12, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 13, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 14, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 15, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 16, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 17, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 18, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 19, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 20, name: 'Material-UI', description: 'is Amazing', price: 150 },
+        { id: 21, name: 'Material-UI', description: 'is Amazing', price: 150 },
 
       ];
       
       const columns: GridColDef[] = [
-        { field: 'col1', headerName: 'Column 1', width: 150 },
-        { field: 'col2', headerName: 'Column 2', width: 150 },
+        { field: 'name', headerName: 'Name', width: 150 },
+        { field: 'description', headerName: 'Description', width: 150 },
+        { field: 'price', headerName: 'Price', width: 150 },
       ];
     
     return (
@@ -45,4 +47,7 @@ const ArticlesList = () => {
         </div>
     )
 }
-export default ArticlesList;
+
+///
+
+export default connect()(ArticlesList);

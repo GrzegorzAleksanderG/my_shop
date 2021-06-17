@@ -1,5 +1,6 @@
 import { FormControl, FormGroup, InputLabel, Input, FormHelperText, Button } from '@material-ui/core';
 import { useForm } from 'react-hook-form';
+import { connect } from 'react-redux';
 import "./RegistrationScreen.css";
 
 const RegistrationScreen = () => {
@@ -35,4 +36,4 @@ const RegistrationScreen = () => {
         </div>
     )
 }
-export default RegistrationScreen;
+export default connect()(RegistrationScreen);
