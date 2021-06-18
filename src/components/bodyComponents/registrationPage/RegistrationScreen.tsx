@@ -1,14 +1,21 @@
 import { FormControl, FormGroup, InputLabel, Input, FormHelperText, Button } from '@material-ui/core';
 import { useForm } from 'react-hook-form';
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import "./RegistrationScreen.css";
+import { createNewUserAction } from '../../../actions/registerUserActions';
 
 const RegistrationScreen = () => {
 
     const { register, handleSubmit } = useForm();
+    const dispatch = useDispatch();
+    const getRegisteredUsers = useSelector((state: any)=>{
+        return state.registerReducer
+    });
 
     const handleOnSubmit = async (data: any) => {
 // here configure redux-saga dispatch action TODO
+        dispatch(createNewUserAction(data));
+        //alert("AA");
     }
 
     return (
@@ -36,4 +43,13 @@ const RegistrationScreen = () => {
         </div>
     )
 }
-export default connect()(RegistrationScreen);
+
+const mapStateToProps = (state:any) => {
+    return {
+        registerReducer: state.registerReducer
+    }
+}
+
+const mapDispatchToProps = {createNewUserAction}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegistrationScreen);
