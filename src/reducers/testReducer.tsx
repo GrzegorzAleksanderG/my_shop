@@ -1,6 +1,6 @@
 import { ACTION_TYPES } from "../actions/actionTypes"
 
-export const testReducer = (state: any = 0, action: any) => {
+export const testReducer = (state: any[] = [], action: any) => {
     switch (action.type) {
         case ACTION_TYPES.TEST_ASYNC:
             return { ...state }
