@@ -42,7 +42,6 @@ const ArticlesList = () => {
     
     return (
         <div className="div-articles-wrapper">
-            {console.log(rows)}
             <DataGrid rows={rows} columns={columns} />
         </div>
     )

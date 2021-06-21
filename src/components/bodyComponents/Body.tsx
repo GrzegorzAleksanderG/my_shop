@@ -4,9 +4,9 @@ import {
   } from "react-router-dom";
 import LoginScreen from "./loginPage/LoginScreen";
 import RegistrationScreen from './registrationPage/RegistrationScreen';
-import RegistrationTest from './registrationPage/RegistrationTest';
 import ArticlesList from './articlesListPage/ArticlesList';
 import Cart from './cartPage/Cart';
+import LogoutScreen from './loginPage/LogoutScreen';
 
 const Body = () => {
     return (
@@ -16,6 +16,9 @@ const Body = () => {
                     <Route path="/login">
                         <LoginScreen />
                     </Route>
+                    <Route path="/logout">
+                        <LogoutScreen/>
+                    </Route>
                     <Route path="/registration">
                         <RegistrationScreen />
                     </Route>
@@ -24,9 +27,6 @@ const Body = () => {
                     </Route>
                     <Route path="/cart">
                         <Cart />
-                    </Route>
-                    <Route path="/test_register">
-                        <RegistrationTest parameters={window.location.search}/>
                     </Route>
                 </Switch>
             </div>

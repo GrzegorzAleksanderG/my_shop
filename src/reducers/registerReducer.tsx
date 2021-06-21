@@ -16,11 +16,11 @@ export const registerReducer = (state: any[] = [], action: any) => {
             }else{
                 alert(`User with mail ${action.payload.mail} already existed.`);
             }
-            return { ...state }
+            return state;
         case ACTION_TYPES.UPDATE_EXISTING_USER: //not yet
-            return { ...state }
+            return state;
         case ACTION_TYPES.DELETE_EXISTING_USER:
-            return { ...state }
+            return state;
         default:
             return state;
     }

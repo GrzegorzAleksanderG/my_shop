@@ -27,7 +27,7 @@ const RegistrationScreen = () => {
                     <FormControl>
                         <InputLabel htmlFor="my-email">Email address</InputLabel>
                         <Input {...register("mail")} id="my-email" aria-describedby="my-email-text" type="email" onChange={(e) => setMail(e.target.value)} value={mail}/>
-                        <FormHelperText id="my-email-text">Type your email.</FormHelperText>
+                        <FormHelperText id="my-email-text">Type your email</FormHelperText>
                     </FormControl>
                     <FormControl>
                         <InputLabel htmlFor="my-password">Password</InputLabel>

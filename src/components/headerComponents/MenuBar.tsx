@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import { useState } from 'react';
 import "./MenuBar.css";
+import { useSelector } from 'react-redux';
 
 
 const MenuBar = () => {
@@ -23,6 +24,8 @@ const MenuBar = () => {
     const handlePopper = (e: any) => {
         setAnchorEl(anchorEl ? null : e.currentTarget);
     }
+
+    const loggedUserSelector = useSelector((state:any) => state.loginReducer);
 
     return (
         <div>
@@ -44,7 +47,10 @@ const MenuBar = () => {
                             Account
                         </Typography>
                         <Popper id={"simple-popper"} open={open} anchorEl={anchorEl}>
-                            <Link to="/login"><div className="poper-item">Log in</div></Link>
+                            {loggedUserSelector.length === 0 ? 
+                                <Link to="/login"><div className="poper-item">Log in</div></Link> :
+                                <Link to="/logout"><div className="poper-item">Log out</div></Link>                                
+                            }
                             <Link to="/registration"><div className="poper-item">Register</div></Link>
                         </Popper>
                     </IconButton>
@@ -58,6 +64,9 @@ const MenuBar = () => {
                             </Typography>
                         </IconButton>
                     </Link>
+                    <Typography variant="h6" >
+                        {loggedUserSelector.length === 0? "Welcome" : `Welcome ${loggedUserSelector[0].mail}`}
+                    </Typography>
                 </Toolbar>
             </AppBar>
         </div>
