@@ -8,7 +8,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import InputBase from '@material-ui/core/InputBase';
 import Popper from '@material-ui/core/Popper';
 import {
-    Link
+    Link, NavLink
 } from "react-router-dom";
 import { useState } from 'react';
 import "./MenuBar.css";
@@ -37,9 +37,9 @@ const MenuBar = () => {
                         style={{ "backgroundColor": "white", "padding": "3px" }}
                     />
                     <IconButton color="inherit">
-                        <Link to="/articles">
+                        <NavLink to="/articles">
                             <SearchIcon />
-                        </Link>
+                        </NavLink>
                     </IconButton>
                     <IconButton color="inherit" onClick={(e) => handlePopper(e)}>
                         <AccountCircle />
@@ -51,10 +51,10 @@ const MenuBar = () => {
                                 <Link to="/login"><div className="poper-item">Log in</div></Link> :
                                 <Link to="/logout"><div className="poper-item">Log out</div></Link>                                
                             }
-                            <Link to="/registration"><div className="poper-item">Register</div></Link>
+                            <NavLink to="/registration"><div className="poper-item">Register</div></NavLink>
                         </Popper>
                     </IconButton>
-                    <Link to="/cart">
+                    <NavLink to="/cart">
                         <IconButton color="inherit">
 
                             <ShoppingCartIcon />
@@ -63,7 +63,7 @@ const MenuBar = () => {
                                 Cart
                             </Typography>
                         </IconButton>
-                    </Link>
+                    </NavLink>
                     <Typography variant="h6" >
                         {loggedUserSelector.length === 0? "Welcome" : `Welcome ${loggedUserSelector[0].mail}`}
                     </Typography>

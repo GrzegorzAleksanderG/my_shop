@@ -5,3 +5,7 @@ div.poper-item {
     border-color: black;
     background-color: #283747;
 }
+
+.active {
+    color: coral;
+}

@@ -5,6 +5,6 @@ div.div-articles-wrapper{
     margin: auto;
 }
 
-.MuiDataGrid-row:hover{
-    background-color: goldenrod !important;
+.MuiDataGrid-root .MuiDataGrid-row:hover {
+    background-color: goldenrod !important; /*overrides inline style*/
 }

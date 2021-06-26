@@ -7,12 +7,16 @@ import RegistrationScreen from './registrationPage/RegistrationScreen';
 import ArticlesList from './articlesListPage/ArticlesList';
 import Cart from './cartPage/Cart';
 import LogoutScreen from './loginPage/LogoutScreen';
+import ErrorPage404 from './ErrorSite404';
+import Gallery from './galleryPage/Gallery';
 
 const Body = () => {
     return (
             <div>
-                {/*TODO <iframe></iframe>*/}
                 <Switch>
+                    <Route exact path="/">
+                        <Gallery />
+                    </Route>
                     <Route path="/login">
                         <LoginScreen />
                     </Route>
@@ -27,6 +31,9 @@ const Body = () => {
                     </Route>
                     <Route path="/cart">
                         <Cart />
+                    </Route>
+                    <Route>
+                        <ErrorPage404/>
                     </Route>
                 </Switch>
             </div>
