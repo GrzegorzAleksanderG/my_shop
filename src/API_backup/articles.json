@@ -1,0 +1,74 @@
+{
+    "articles": [
+        {
+            "name":"Acer SB220Q",
+            "description":"21.5 inches full HD, free sync",
+            "category":"Monitor",
+            "price":"$100",
+            "id": 1
+        },
+        {
+            "name":"Lenovo G34w-10",
+            "description":"34 inches full HD, free sync",
+            "category":"Monitor",
+            "price":"$370",
+            "id": 2
+        },
+        {
+            "name":"Logitech MK270",
+            "description":"programmable hotkeys to boost productivity",
+            "category":"Keyboard",
+            "price":"$25",
+            "id": 3
+        },
+        {
+            "name":"Redragon S101",
+            "description":"multimedia and anti-ghosting",
+            "category":"Keyboard",
+            "price":"$30",
+            "id": 4
+        },
+        {
+            "name":"MSI Gaming GeForce RTX 3080 Ti 12GB",
+            "description":"memory intefrace: 320-bit",
+            "category":"Graphic Card",
+            "price":"$2300",
+            "id": 5
+        },
+        {
+            "name":"ZOTAC Gaing GeForce GTX 1660 6GB",
+            "description":"boost clock 1785 mhz",
+            "category":"Graphic Card",
+            "price":"$440",
+            "id": 6
+        },
+        {
+            "name":"AMD Ryzen 7 3700X 8-Core",
+            "description":"16 thread unlocked",
+            "category":"CPU",
+            "price":"$300",
+            "id": 7
+        },
+        {
+            "name":"Intel Core i9010850K",
+            "description":"10 cores up to 5.2 GHz unlocked LGA",
+            "category":"CPU",
+            "price":"$400",
+            "id": 8
+        },
+        {
+            "name":"ASUS ROG Strix B450",
+            "description":"Bios flashback, 256Mb",
+            "category":"Motherboard",
+            "price":"$135",
+            "id": 9
+        },
+        {
+            "name":"Gigabyte Z590 UD",
+            "description":"triple M.2 PCIe 4.0",
+            "category":"Motherboard",
+            "price":"$200",
+            "id": 10
+        }
+    ]
+}
