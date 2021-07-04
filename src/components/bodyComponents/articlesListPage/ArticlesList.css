@@ -1,10 +1,14 @@
 div.div-articles-wrapper{
     background-color: palegoldenrod;
-    width: 80%;
-    height: 500px;
+    width: 95%;
+    height: 700px;
     margin: auto;
 }
 
 .MuiDataGrid-root .MuiDataGrid-row:hover {
     background-color: goldenrod !important; /*overrides inline style*/
+}
+
+.MuiDataGrid-root .MuiDataGrid-window {
+    overflow-x: hidden !important; /*overrides inline style*/
 }

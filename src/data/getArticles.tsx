@@ -6,6 +6,6 @@ const getArticles = (dispatch:Function) => {
             "Content-Type":"application/json",
             "Accept":"application/json"
         }
-    }).then((res)=>{return res.json()}).then((data)=>{dispatch(getArticlesAction(data))});
+    }).then((res)=>{return res.json()}).then((data)=>{dispatch(getArticlesAction(data.articles))});
 }
 export default getArticles;

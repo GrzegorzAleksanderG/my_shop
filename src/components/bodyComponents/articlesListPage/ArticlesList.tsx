@@ -4,7 +4,7 @@ import './ArticlesList.css'
 import { connect, useDispatch, useSelector } from "react-redux";
 import { getArticlesAction } from '../../../actions/getDataActions';
 import getArticles from "../../../data/getArticles";
-import { getDataReducer } from '../../../reducers/getDataReducer';
+import { Button } from "@material-ui/core";
 
 const ArticlesList = () => {
     const dispatch = useDispatch();
@@ -13,22 +13,28 @@ const ArticlesList = () => {
     }, [dispatch]);
 
     const rows = useSelector((state:any)=>{
-        return state.getDataReducer.articles ?? []; //to repair TODO
+        return state.getDataReducer.articles;
     });
-
-    console.log(rows, "rows");
-      
+     
       const columns: GridColDef[] = [
-        { field: 'id', headerName: 'ID', width: 30 },
+        { field: 'id', headerName: 'ID', width: 100 },
         { field: 'name', headerName: 'Name', width: 150 },
-        { field: 'category', headerName: 'Category', width: 100 },
+        { field: 'category', headerName: 'Category', width: 140 },
         { field: 'description', headerName: 'Description', width: 150 },
-        { field: 'price', headerName: 'Price', width: 150 },
+        { field: 'price', headerName: 'Price', width: 110 },
+        { field: '', headerName: '', width: 100, disableClickEventBubbling: true, 
+        renderCell: (params) => {
+            const onClick = () =>{
+                console.log(params.row);
+            }      
+            return <Button className="button-articles" onClick={onClick}>BUY</Button>;
+          }
+        }
       ];
     
     return (
         <div className="div-articles-wrapper">
-            <DataGrid rows={rows} columns={columns} />
+            {rows && <DataGrid rows={Array.from(rows) as GridRowsProp} columns={columns} />}
         </div>
     )
 }
