@@ -1,41 +1,27 @@
 import { useEffect } from "react";
 import { DataGrid, GridRowsProp, GridColDef } from '@material-ui/data-grid';
 import './ArticlesList.css'
-import { connect } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { getArticlesAction } from '../../../actions/getDataActions';
+import getArticles from "../../../data/getArticles";
+import { getDataReducer } from '../../../reducers/getDataReducer';
 
 const ArticlesList = () => {
-
+    const dispatch = useDispatch();
     useEffect(() => {
-        //TODO
-    }, [])
+        getArticles(dispatch);
+    }, [dispatch]);
 
-    const rows: GridRowsProp = [ //tmp
-        { id: 1, name: 'Katana', description: 'xxxxx', price: 150 },
-        { id: 2, name: 'Baton', description: 'yyyyyyy', price: 150 },
-        { id: 3, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 4, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 5, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 6, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 7, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 8, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 9, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 10, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 11, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 12, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 13, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 14, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 15, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 16, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 17, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 18, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 19, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 20, name: 'Material-UI', description: 'is Amazing', price: 150 },
-        { id: 21, name: 'Material-UI', description: 'is Amazing', price: 150 },
+    const rows = useSelector((state:any)=>{
+        return state.getDataReducer.articles ?? []; //to repair TODO
+    });
 
-      ];
+    console.log(rows, "rows");
       
       const columns: GridColDef[] = [
+        { field: 'id', headerName: 'ID', width: 30 },
         { field: 'name', headerName: 'Name', width: 150 },
+        { field: 'category', headerName: 'Category', width: 100 },
         { field: 'description', headerName: 'Description', width: 150 },
         { field: 'price', headerName: 'Price', width: 150 },
       ];
@@ -47,6 +33,12 @@ const ArticlesList = () => {
     )
 }
 
-///
+const mapStateToProps = (state:any) => {
+    return {
+        getDataReducer: state.getDataReducer
+    }
+}
 
-export default connect()(ArticlesList);
+const mapDispatchToProps = {getArticlesAction}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArticlesList);

@@ -8,13 +8,13 @@ import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import "regenerator-runtime/runtime";
-import { tmpGenerator } from './sagas/saga';
+import { rootSaga } from './sagas/rootSaga';
 import rootReducer from './reducers/reducers';
 
 const sagaMiddleware = createSagaMiddleware(); //  https://enetoolveda.medium.com/how-to-use-redux-saga-typescript-like-a-pro-523b97143303
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
-sagaMiddleware.run(tmpGenerator);
+sagaMiddleware.run(rootSaga);
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
