@@ -5,9 +5,9 @@ import Occasions from './Occasions';
 const Header = () => {
     return (
         <div>
-            <Logo/>
-            <MenuBar/>
-            <Occasions/>
+            <Logo />
+            <MenuBar />
+            <Occasions />
         </div>
     )
 }

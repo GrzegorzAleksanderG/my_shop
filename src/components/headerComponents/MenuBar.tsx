@@ -25,7 +25,8 @@ const MenuBar = () => {
         setAnchorEl(anchorEl ? null : e.currentTarget);
     }
 
-    const loggedUserSelector = useSelector((state:any) => state.loginReducer);
+    const loggedUserSelector = useSelector((state: any) => state.loginReducer);
+    const cartSelector = useSelector((state: any) => state.cartReducer);
 
     return (
         <div>
@@ -47,9 +48,9 @@ const MenuBar = () => {
                             Account
                         </Typography>
                         <Popper id={"simple-popper"} open={open} anchorEl={anchorEl}>
-                            {loggedUserSelector.length === 0 ? 
+                            {loggedUserSelector.length === 0 ?
                                 <Link to="/login"><div className="poper-item">Log in</div></Link> :
-                                <Link to="/logout"><div className="poper-item">Log out</div></Link>                                
+                                <Link to="/logout"><div className="poper-item">Log out</div></Link>
                             }
                             <NavLink to="/registration"><div className="poper-item">Register</div></NavLink>
                         </Popper>
@@ -60,12 +61,12 @@ const MenuBar = () => {
                             <ShoppingCartIcon />
 
                             <Typography variant="h6" >
-                                Cart
+                                Cart {cartSelector.length > 0 && `(${cartSelector.length})`}
                             </Typography>
                         </IconButton>
                     </NavLink>
                     <Typography variant="h6" >
-                        {loggedUserSelector.length === 0? "Welcome" : `Welcome ${loggedUserSelector[0].mail}`}
+                        {loggedUserSelector.length === 0 ? "Welcome" : `Welcome ${loggedUserSelector[0].mail}`}
                     </Typography>
                 </Toolbar>
             </AppBar>
