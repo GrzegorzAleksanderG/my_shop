@@ -18,6 +18,7 @@ import { useSelector } from 'react-redux';
 const MenuBar = () => {
 
     const [anchorEl, setAnchorEl] = useState(null);
+    const [inputSearch, setInputSearch] = useState("");
 
     const open = Boolean(anchorEl);
 
@@ -28,6 +29,10 @@ const MenuBar = () => {
     const loggedUserSelector = useSelector((state: any) => state.loginReducer);
     const cartSelector = useSelector((state: any) => state.cartReducer);
 
+    const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setInputSearch(event.target.value);
+    }
+
     return (
         <div>
             <AppBar position="static" style={{ "backgroundColor": '#283747' }}>
@@ -36,9 +41,10 @@ const MenuBar = () => {
                         placeholder="Search…"
                         inputProps={{ 'aria-label': 'search' }}
                         style={{ "backgroundColor": "white", "padding": "3px" }}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => { onChange(e) }}
                     />
                     <IconButton color="inherit">
-                        <NavLink to="/articles">
+                        <NavLink to={`/articles/${inputSearch}`}>
                             <SearchIcon />
                         </NavLink>
                     </IconButton>

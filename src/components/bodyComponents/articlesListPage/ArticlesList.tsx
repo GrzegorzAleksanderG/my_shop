@@ -6,12 +6,15 @@ import { getArticlesAction } from '../../../actions/getDataActions';
 import getArticles from "../../../data/getArticles";
 import { Button } from "@material-ui/core";
 import { addToCartAction } from '../../../actions/cartActions';
+import { useLocation } from "react-router";
 
 const ArticlesList = () => {
     const dispatch = useDispatch();
+    const location = useLocation();
     useEffect(() => {
         getArticles(dispatch);
     }, [dispatch]);
+    const locationArray = location.pathname.split("/");
 
     const rows = useSelector((state: any) => {
         return state.getDataReducer.articles;
@@ -36,7 +39,20 @@ const ArticlesList = () => {
 
     return (
         <div className="div-articles-wrapper">
-            {rows && <DataGrid rows={Array.from(rows) as GridRowsProp} columns={columns} />}
+            {rows && <DataGrid
+                rows={Array.from(rows) as GridRowsProp}
+                columns={columns}
+                filterModel={{
+                    items:
+                        [
+                            {
+                                columnField: 'name',
+                                operatorValue: 'contains',
+                                value: locationArray[locationArray.length - 1]
+                            }
+                        ] //only XGrid in commercial version supports multiple filtering
+                }}
+            />}
         </div>
     )
 }
