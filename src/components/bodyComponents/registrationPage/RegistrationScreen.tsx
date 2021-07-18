@@ -3,6 +3,7 @@ import { connect, useDispatch } from 'react-redux';
 import "./RegistrationScreen.css";
 import { createNewUserAction } from '../../../actions/registerUserActions';
 import { useState } from 'react';
+import { StateType } from '../../../reducers/stateReducerTypes';
 
 const RegistrationScreen = () => {
     const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const RegistrationScreen = () => {
     )
 }
 
-const mapStateToProps = (state:any) => {
+const mapStateToProps = (state:StateType) => {
     return {
         registerReducer: state.registerReducer
     }

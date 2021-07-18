@@ -3,15 +3,16 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 import "./LoginScreen.css";
 import { logUserAction } from '../../../actions/loginUserActions';
 import { useState } from 'react';
+import { RegisterReducerType, StateType } from '../../../reducers/stateReducerTypes';
 
 const LoginScreen = () => {
     const dispatch = useDispatch();
     const [mail, setMail] = useState("");
     const [pass, setPass] = useState("");
-    const registeredUsersSelector = useSelector((state : any) => state.registerReducer)
+    const registeredUsersSelector = useSelector((state : StateType) => state.registerReducer)
 
     const handleOnClick = () => {
-        if(Object.values(registeredUsersSelector).some((x : any) => x.mail === mail && x.pass === pass)){
+        if(Object.values(registeredUsersSelector).some((x : RegisterReducerType) => x.mail === mail && x.pass === pass)){
             dispatch(logUserAction({mail, pass}));
         }else{
             alert("User or password is not valid. Access denied.")
@@ -41,7 +42,7 @@ const LoginScreen = () => {
     )
 }
 
-const mapStateToProps = (state:any) => {
+const mapStateToProps = (state:StateType) => {
     return {
         loginReducer: state.loginReducer
     }

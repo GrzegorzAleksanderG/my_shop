@@ -1,10 +1,10 @@
 import { ACTION_TYPES } from "../actions/actionTypes"
+import { CartReducerType } from "./stateReducerTypes";
 
 export const cartReducer = (state: any[] = [], action: any) => {
-    console.log(action);
     switch (action.type) {
         case ACTION_TYPES.ADD_TO_CART_ASYNC:
-            if (!state.some((x) => { return x.id === action.payload.id })) {
+            if (!state.some((x : CartReducerType) => { return x.id === action.payload.id })) {
                 action.payload.count = 1;
                 state = state.concat(action.payload);
             } else {

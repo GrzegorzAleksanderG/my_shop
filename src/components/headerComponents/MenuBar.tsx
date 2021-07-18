@@ -13,6 +13,7 @@ import {
 import { useState } from 'react';
 import "./MenuBar.css";
 import { useSelector } from 'react-redux';
+import { StateType, CartReducerType } from '../../reducers/stateReducerTypes';
 
 
 const MenuBar = () => {
@@ -22,12 +23,16 @@ const MenuBar = () => {
 
     const open = Boolean(anchorEl);
 
-    const handlePopper = (e: any) => {
+    const handlePopper = (e: React.BaseSyntheticEvent) => {
         setAnchorEl(anchorEl ? null : e.currentTarget);
     }
 
-    const loggedUserSelector = useSelector((state: any) => state.loginReducer);
-    const cartSelector = useSelector((state: any) => state.cartReducer);
+    const loggedUserSelector = useSelector((state: StateType) => state.loginReducer);
+    const cartSelector = useSelector((state: StateType) => state.cartReducer.length > 0 ? state.cartReducer.reduce(
+        (acc : number, curr : CartReducerType ) => {
+            return acc + curr.count;
+        }, 0
+    ) : 0);
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInputSearch(event.target.value);
@@ -67,7 +72,7 @@ const MenuBar = () => {
                             <ShoppingCartIcon />
 
                             <Typography variant="h6" >
-                                Cart {cartSelector.length > 0 && `(${cartSelector.length})`}
+                                Cart {cartSelector > 0 && `(${cartSelector})`}
                             </Typography>
                         </IconButton>
                     </NavLink>

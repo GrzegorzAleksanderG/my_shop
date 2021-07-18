@@ -1,9 +1,10 @@
 import { GridColDef, DataGrid, GridRowsProp } from '@material-ui/data-grid';
 import { connect, useSelector } from "react-redux";
+import { StateType } from '../../../reducers/stateReducerTypes';
 
 const Cart = () => {
 
-    const cartSelector = useSelector((state: any) => state.cartReducer);
+    const cartSelector = useSelector((state: StateType) => state.cartReducer);
 
     const columns: GridColDef[] = [
         { field: 'id', headerName: 'ID', width: 100 },

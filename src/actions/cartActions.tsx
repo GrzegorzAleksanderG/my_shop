@@ -1,6 +1,7 @@
+import { GetDataReducerType } from "../reducers/stateReducerTypes";
 import { ACTION_TYPES } from "./actionTypes";
 
-export const addToCartAction = (payload:any) => {
+export const addToCartAction = (payload:GetDataReducerType) => {
     return {
         type: ACTION_TYPES.ADD_TO_CART_ASYNC,
         payload

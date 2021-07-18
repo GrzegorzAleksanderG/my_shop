@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { connect, useDispatch } from "react-redux";
 import { logoutUserAction } from '../../../actions/loginUserActions';
+import { StateType } from "../../../reducers/stateReducerTypes";
 
 const LogoutScreen = () => {
 
@@ -16,7 +17,7 @@ const LogoutScreen = () => {
         </div>
     )
 }
-const mapStateToProps = (state:any) => {
+const mapStateToProps = (state:StateType) => {
     return {
         loginReducer: state.loginReducer
     }

@@ -5,6 +5,7 @@ import {
     BrowserRouter
 } from "react-router-dom";
 import { connect } from "react-redux";
+import { StateType } from "../reducers/stateReducerTypes";
 
 const MainWrapper = () => {
     return (
@@ -18,7 +19,7 @@ const MainWrapper = () => {
     )
 }
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: StateType) => {
     return {
         loginReducer: state.loginReducer,
         registerReducer: state.registerReducer
