@@ -17,8 +17,8 @@ const ArticlesList = () => {
     }, [dispatch]);
     const locationArray = location.pathname.split("/");
 
-    const rows = useSelector((state: any) => {
-        return state.getDataReducer.articles;
+    const rows = useSelector((state: StateType) => {
+        return state.getDataReducer;
     });
 
     const columns: GridColDef[] = [

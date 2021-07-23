@@ -1,7 +1,7 @@
-import { ACTION_TYPES } from "../actions/actionTypes"
+import { ACTION_TYPES, LogUserActionType } from "../actions/actionTypes"
 import { LoginReducerType } from "./stateReducerTypes";
 
-export const loginReducer = (state: LoginReducerType[] = [], action: any) => {
+export const loginReducer = (state: LoginReducerType[] = [], action: LogUserActionType) => {
     switch (action.type) {
         case ACTION_TYPES.LOG_USER:
             if(state.length === 0){

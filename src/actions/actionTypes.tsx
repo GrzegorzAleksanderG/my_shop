@@ -31,7 +31,7 @@ export type LogoutUserActionType = {
 
 export type GetArticlesActionType = {
     type : ACTION_TYPES;
-    payload : GetDataReducerType;
+    payload : GetDataReducerType[];
 }
 
 export type AddToCartActionType = {
