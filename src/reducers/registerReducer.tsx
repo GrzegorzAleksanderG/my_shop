@@ -1,6 +1,7 @@
-import { ACTION_TYPES } from "../actions/actionTypes"
+import { ACTION_TYPES, NewUserActionType } from "../actions/actionTypes"
+import { RegisterReducerType } from "./stateReducerTypes";
 
-export const registerReducer = (state: any[] = [], action: any) => {
+export const registerReducer = (state: RegisterReducerType[] = [], action: NewUserActionType) => {
     switch (action.type) {//CRUD... and redux SAGA (in shopinglist)
         case ACTION_TYPES.CREATE_NEW_USER:
             if (typeof state === "object"){

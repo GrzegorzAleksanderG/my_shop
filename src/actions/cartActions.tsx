@@ -8,7 +8,7 @@ export const addToCartAction = (payload:GetDataReducerType) => {
     }
 }
 
-export const removeFromCartAction = (payload:any) => {
+export const removeFromCartAction = (payload:GetDataReducerType) => {
     return {
         type: ACTION_TYPES.REMOVE_FROM_CART_ASYNC,
         payload

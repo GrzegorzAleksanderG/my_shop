@@ -1,7 +1,7 @@
-import { ACTION_TYPES } from "../actions/actionTypes"
+import { ACTION_TYPES, AddToCartActionType } from '../actions/actionTypes';
 import { CartReducerType } from "./stateReducerTypes";
 
-export const cartReducer = (state: any[] = [], action: any) => {
+export const cartReducer = (state: CartReducerType[] = [], action: AddToCartActionType) => {
     switch (action.type) {
         case ACTION_TYPES.ADD_TO_CART_ASYNC:
             if (!state.some((x : CartReducerType) => { return x.id === action.payload.id })) {
@@ -17,7 +17,7 @@ export const cartReducer = (state: any[] = [], action: any) => {
             }
             return state
         case ACTION_TYPES.REMOVE_FROM_CART_ASYNC:
-            if (state.some((x) => { return x.id === action.payload.id && x.count > 1 })) {
+            if (state.some((x : CartReducerType) => { return x.id === action.payload.id && x.count > 1 })) {
                 state = state.map((x) => {
                     if (x.id === action.payload.id) {
                         x.count--;
