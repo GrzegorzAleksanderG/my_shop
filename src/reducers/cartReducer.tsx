@@ -5,7 +5,6 @@ export const cartReducer = (state: CartReducerType[] = [], action: AddToCartActi
     switch (action.type) {
         case ACTION_TYPES.ADD_TO_CART_ASYNC:
             if (!state.some((x : CartReducerType) => { return x.id === action.payload.id })) {
-                action.payload.count = 1;
                 return state.concat(action.payload);
             } else {
                 return state.map((x) => {

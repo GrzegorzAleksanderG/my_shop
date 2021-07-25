@@ -7,7 +7,7 @@ import getArticles from "../../../data/getArticles";
 import { Button } from "@material-ui/core";
 import { addToCartAction } from '../../../actions/cartActions';
 import { useLocation } from "react-router";
-import { GetDataReducerType, StateType } from '../../../reducers/stateReducerTypes';
+import { StateType, CartReducerType } from '../../../reducers/stateReducerTypes';
 
 const ArticlesList = () => {
     const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const ArticlesList = () => {
             field: '', headerName: '', width: 100, disableClickEventBubbling: true,
             renderCell: (params) => {
                 const onClick = () => {
-                    dispatch(addToCartAction(params.row as GetDataReducerType));
+                    dispatch(addToCartAction({...params.row, count : 1} as CartReducerType));
                 }
                 return <Button className="button-articles" onClick={onClick}>BUY</Button>;
             }
