@@ -6,28 +6,26 @@ export const cartReducer = (state: CartReducerType[] = [], action: AddToCartActi
         case ACTION_TYPES.ADD_TO_CART_ASYNC:
             if (!state.some((x : CartReducerType) => { return x.id === action.payload.id })) {
                 action.payload.count = 1;
-                state = state.concat(action.payload);
+                return state.concat(action.payload);
             } else {
-                state = state.map((x) => {
+                return state.map((x) => {
                     if (x.id === action.payload.id) {
                         x.count++;
                     }
                     return x;
                 });
             }
-            return state
         case ACTION_TYPES.REMOVE_FROM_CART_ASYNC:
             if (state.some((x : CartReducerType) => { return x.id === action.payload.id && x.count > 1 })) {
-                state = state.map((x) => {
+                return state.map((x) => {
                     if (x.id === action.payload.id) {
                         x.count--;
                     }
                     return x;
                 });
             } else {
-                state = state.filter((x) => { return x.id !== action.payload.id });
+                return state.filter((x) => { return x.id !== action.payload.id });
             }
-            return state
         default:
             return state;
     }
