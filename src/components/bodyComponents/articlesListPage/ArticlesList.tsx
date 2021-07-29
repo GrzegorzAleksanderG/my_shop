@@ -28,7 +28,7 @@ const ArticlesList = () => {
         { field: 'description', headerName: 'Description', width: 150 },
         { field: 'price', headerName: 'Price', width: 110 },
         {
-            field: '', headerName: '', width: 100, disableClickEventBubbling: true,
+            field: '', headerName: '', width: 100,
             renderCell: (params) => {
                 const onClick = () => {
                     dispatch(addToCartAction({...params.row, count : 1} as CartReducerType));

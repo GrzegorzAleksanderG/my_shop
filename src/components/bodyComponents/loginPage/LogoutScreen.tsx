@@ -8,7 +8,7 @@ const LogoutScreen = () => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(logoutUserAction({}));
+        dispatch(logoutUserAction({mail:"", pass:""}));
     }, [dispatch]);
 
     return(
