@@ -14,30 +14,30 @@ describe("testing reducers", () => {
             category : "test category",
             price : "test price",
             count: 1
-        }))).toEqual({
+        }))).toEqual([{
             id: 1,
             name : "test name",
             description : "test desc",
             category : "test category",
             price : "test price",
             count: 1
-        });
+        }]);
     });
 
     test("should register new user", () => {
         expect(registerReducer([], createNewUserAction({
             mail:"111@gmail.com", pass:"111", pass2:"111"
-        }))).toEqual({
+        }))).toEqual([{
             mail:"111@gmail.com", pass:"111", pass2:"111"
-        });
+        }]);
     });
 
     test("should login user", () => {
         expect(loginReducer([], logUserAction({
             mail:"111@gmail.com", pass:"111"
-        }))).toEqual({
+        }))).toEqual([{
             mail:"111@gmail.com", pass:"111"
-        });
+        }]);
     });
 
     test("should logout user", () => {
