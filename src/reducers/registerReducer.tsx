@@ -3,7 +3,7 @@ import { RegisterReducerType } from "./stateReducerTypes";
 
 export const registerReducer = (state: RegisterReducerType[] = [], action: NewUserActionType) => {
     switch (action.type) {//CRUD... and redux SAGA (in shopinglist)
-        case ACTION_TYPES.CREATE_NEW_USER:
+        case ACTION_TYPES.CREATE_NEW_USER_ASYNC:
             if(state.length === 0 || !state.some(x => x.mail === action.payload.mail)){
                 if(action.payload.pass !== action.payload.pass2){
                     alert("Retyped password should be same as password.");

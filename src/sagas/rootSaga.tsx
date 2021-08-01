@@ -1,11 +1,17 @@
 import { all, call, spawn } from "redux-saga/effects";
-import { getArticlesSaga } from "./getArticlesSaga";
-import { testSaga } from "./testSaga";
+import { cartSaga } from "./cartSaga";
+import { getDataSaga } from "./getDataSaga";
+import { loginSaga } from "./loginSaga";
+import { logoutSaga } from "./logoutSaga";
+import { registerSaga } from "./registerSaga";
 
 export function* rootSaga() {
     const sagas = [
-        testSaga,
-        getArticlesSaga
+        cartSaga,
+        loginSaga,
+        logoutSaga,
+        getDataSaga,
+        registerSaga
     ];
 
     yield all(sagas.map(saga =>
