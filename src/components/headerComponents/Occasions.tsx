@@ -5,7 +5,7 @@ import images from "../../images/images.js";
 const responsive = {
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3,
+        items: 7,
         slidesToSlide: 3
     },
     tablet: {
