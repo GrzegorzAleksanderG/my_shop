@@ -1,6 +1,7 @@
 import { GridColDef, DataGrid, GridRowsProp } from '@material-ui/data-grid';
 import { connect, useSelector } from "react-redux";
 import { StateType } from '../../../reducers/stateReducerTypes';
+import BuyButton from './BuyButton';
 
 const Cart = () => {
 
@@ -16,9 +17,12 @@ const Cart = () => {
     ];
 
     return (
-        <div className="div-articles-wrapper">
-            <DataGrid rows={cartSelector as GridRowsProp} columns={columns} />
-        </div>
+        <>
+            <BuyButton />
+            <div className="div-articles-wrapper">
+                <DataGrid rows={cartSelector as GridRowsProp} columns={columns} />
+            </div>
+        </>
     )
 
 }

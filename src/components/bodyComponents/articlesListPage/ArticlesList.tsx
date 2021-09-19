@@ -8,6 +8,7 @@ import { Button } from "@material-ui/core";
 import { addToCartAction } from '../../../actions/cartActions';
 import { useLocation } from "react-router";
 import { StateType, CartReducerType } from '../../../reducers/stateReducerTypes';
+import { AddShoppingCart } from "@material-ui/icons";
 
 const ArticlesList = () => {
     const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const ArticlesList = () => {
                 const onClick = () => {
                     dispatch(addToCartAction({...params.row, count : 1} as CartReducerType));
                 }
-                return <Button className="button-articles" onClick={onClick}>BUY</Button>;
+                return <Button className="button-articles" onClick={onClick}>BUY <AddShoppingCart/></Button>;
             }
         }
     ];
