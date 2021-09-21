@@ -9,6 +9,7 @@ import Cart from './cartPage/Cart';
 import LogoutScreen from './loginPage/LogoutScreen';
 import ErrorPage404 from './ErrorSite404';
 import Gallery from './galleryPage/Gallery';
+import Summary from "./summaryPage/Summary";
 
 const Body = () => {
     return (
@@ -31,6 +32,9 @@ const Body = () => {
                     </Route>
                     <Route path="/cart">
                         <Cart />
+                    </Route>
+                    <Route path="/summary">
+                        <Summary />
                     </Route>
                     <Route>
                         <ErrorPage404/>
