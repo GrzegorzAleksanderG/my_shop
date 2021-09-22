@@ -13,7 +13,7 @@ const Summary = () => {
     const cartSelector = useSelector((state: StateType) => state.cartReducer);
     const sumOfCostsSelector = useSelector((state: StateType) => state.cartReducer.map((x: CartReducerType) => {
         return Number.parseFloat(x.price.slice(1)) * x.count
-    }).reduce((x: number, y: number) => { return x + y }));
+    }).reduce((x: number, y: number) => { return x + y }, 0));
     const formik = useFormik({
         initialValues: {
             mail: loggedUserSelector[0].mail ?? "",

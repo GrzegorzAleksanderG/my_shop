@@ -11,10 +11,10 @@ const BuyButton = () => {
     const loggedUserSelector = useSelector((state: StateType) => state.loginReducer);
     const sumOfCostsSelector = useSelector((state: StateType) => state.cartReducer.map((x: CartReducerType) => {
         return Number.parseFloat(x.price.slice(1)) * x.count
-    }).reduce((x: number, y: number) => { return x + y }));
+    }).reduce((x: number, y: number) => { return x + y }, 0));
 
     return (
-        <AppBar position="static" style={{ "backgroundColor": 'red' }}>
+        <AppBar position="static" style={{ "backgroundColor": 'chocolate' }}>
             <Toolbar>
                 <IconButton color="inherit">
                      {loggedUserSelector.length > 0 ? 
