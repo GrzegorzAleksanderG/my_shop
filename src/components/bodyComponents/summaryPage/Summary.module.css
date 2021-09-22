@@ -1,0 +1,19 @@
+.divSummaryTabWrapper{
+    background-color: palegoldenrod !important;
+    width: 60%;
+    height: 300px;
+    margin: auto;
+}
+
+.divSummaryFormWrapper{
+    background-color: goldenrod !important;
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+
+.buttonForm{
+    background-color: chocolate !important;
+    height: auto;
+    margin: auto;
+}
