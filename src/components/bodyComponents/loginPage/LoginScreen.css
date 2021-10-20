@@ -7,3 +7,10 @@ div.div-login-wrapper{
 .MuiButton-contained.submit-login{
     background-color: goldenrod;
 }
+
+.google-login{
+    width: 100%;
+    height: 36px;
+    background-color: dodgerblue;
+    color: white;
+}

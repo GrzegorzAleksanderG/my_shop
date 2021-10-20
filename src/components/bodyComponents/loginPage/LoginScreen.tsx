@@ -4,7 +4,8 @@ import "./LoginScreen.css";
 import { logUserAction } from '../../../actions/loginUserActions';
 import { useState } from 'react';
 import { RegisterReducerType, StateType } from '../../../reducers/stateReducerTypes';
-import FacebookLogin, { ReactFacebookLoginInfo } from 'react-facebook-login';
+import { FBLogin } from './FBLogin';
+import { GoogleLogin } from './GoogleLogin';
 
 const LoginScreen = () => {
     const dispatch = useDispatch();
@@ -22,10 +23,6 @@ const LoginScreen = () => {
         setPass("");
     }
 
-    const responseFacebook = (response: ReactFacebookLoginInfo) => {
-        console.log(response);
-    }
-
     return (
         <div className="div-registration-wrapper">
             <form>
@@ -41,14 +38,8 @@ const LoginScreen = () => {
                         <FormHelperText id="my-password-text">Type your password</FormHelperText>
                     </FormControl>
                     <Button variant="contained" type="button" onClick={() => { handleOnClick() }} className="submit-registration">Login</Button>
-                    <FacebookLogin
-                        appId="562118384400275"
-                        autoLoad={true}
-                        fields="name,email,picture"
-                        scope="public_profile,user_friends"
-                        callback={responseFacebook}
-                        icon="fa-facebook"
-                    />
+                    <GoogleLogin/>
+                    <FBLogin/>                    
                 </FormGroup>
             </form>
         </div>
