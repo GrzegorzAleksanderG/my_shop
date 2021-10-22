@@ -51,7 +51,7 @@ const Configurator = () => {
         });
     });
 
-    const handleChangeMonitor = (e: any) => {
+    const handleChangeMonitor = (e: any) => {  //any is temporary
         setMonitor(e.target.value);
       };
 
