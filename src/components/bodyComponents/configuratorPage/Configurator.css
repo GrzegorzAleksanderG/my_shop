@@ -1,0 +1,21 @@
+.MuiSelect-root .MuiDataGrid-row:hover {
+    background-color: goldenrod !important; /*overrides inline style*/
+}
+
+.MuiSelect-root .MuiDataGrid-window {
+    overflow-x: hidden !important; /*overrides inline style*/
+}
+
+.MuiTypography-root.details-modal {
+    background-color: goldenrod !important; /*overrides inline style*/
+}
+
+.MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
+    background-color: palegoldenrod !important;
+    text-align: center;
+    padding: 10px;
+}
+
+.div-configurator-wrapper{
+    background-color: palegoldenrod !important;
+}

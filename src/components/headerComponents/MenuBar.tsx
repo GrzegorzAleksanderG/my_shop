@@ -5,6 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AmpStories from '@material-ui/icons/AmpStories';
 import InputBase from '@material-ui/core/InputBase';
 import Popper from '@material-ui/core/Popper';
 import {
@@ -68,11 +69,17 @@ const MenuBar = () => {
                     </IconButton>
                     <NavLink to="/cart">
                         <IconButton color="inherit">
-
                             <ShoppingCartIcon />
-
                             <Typography variant="h6" >
                                 Cart {cartSelector > 0 && `(${cartSelector})`}
+                            </Typography>
+                        </IconButton>
+                    </NavLink>
+                    <NavLink to="/configurator">
+                        <IconButton color="inherit">
+                            <AmpStories />
+                            <Typography variant="h6" >
+                                Configurator
                             </Typography>
                         </IconButton>
                     </NavLink>

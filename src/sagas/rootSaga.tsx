@@ -1,5 +1,6 @@
 import { all, call, spawn } from "redux-saga/effects";
 import { cartSaga } from "./cartSaga";
+import { clearConfiguratorSaga, setConfiguratorSaga } from "./configuratorSaga";
 import { getDataSaga } from "./getDataSaga";
 import { loginSaga } from "./loginSaga";
 import { logoutSaga } from "./logoutSaga";
@@ -11,7 +12,9 @@ export function* rootSaga() {
         loginSaga,
         logoutSaga,
         getDataSaga,
-        registerSaga
+        registerSaga,
+        setConfiguratorSaga,
+        clearConfiguratorSaga
     ];
 
     yield all(sagas.map(saga =>

@@ -16,7 +16,11 @@ export enum ACTION_TYPES {
     ADD_TO_CART = "ADD_TO_CART",
     ADD_TO_CART_ASYNC = "ADD_TO_CART_ASYNC",
     REMOVE_FROM_CART = "REMOVE_FROM_CART",
-    REMOVE_FROM_CART_ASYNC = "REMOVE_FROM_CART_ASYNC"
+    REMOVE_FROM_CART_ASYNC = "REMOVE_FROM_CART_ASYNC",
+    SET_CONFIGURATOR = "SET_CONFIGURATOR",
+    SET_CONFIGURATOR_ASYNC = "SET_CONFIGURATOR_ASYNC",
+    CLEAR_CONFIGURATOR = "CLEAR_CONFIGURATOR",
+    CLEAR_CONFIGURATOR_ASYNC = "CLEAR_CONFIGURATOR_ASYNC"
 }
 
 export type NewUserActionType = {
@@ -42,4 +46,9 @@ export type GetArticlesActionType = {
 export type AddToCartActionType = {
     type : ACTION_TYPES;
     payload : CartReducerType;
+}
+
+export type ConfiguratorActionType = {
+    type: ACTION_TYPES;
+    payload: GetDataReducerType;
 }

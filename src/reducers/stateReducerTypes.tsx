@@ -1,8 +1,10 @@
+import { configuratorReducer } from './configuratorReducer';
 export type StateType = {
     loginReducer : LoginReducerType[];
     getDataReducer : GetDataReducerType[];
     registerReducer : RegisterReducerType[];
     cartReducer : CartReducerType[];
+    configuratorReducer : GetDataReducerType[];
 };
 
 export type LoginReducerType = {
