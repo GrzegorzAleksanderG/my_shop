@@ -51,26 +51,6 @@ const Configurator = () => {
         });
     });
 
-    const handleChangeMonitor = (e: any) => {  //any is temporary
-        setMonitor(e.target.value);
-      };
-
-      const handleChangeKeyboard = (e: any) => {
-        setKeyboard(e.target.value);
-      };
-
-      const handleChangeGraphics = (e: any) => {
-        setGraphic(e.target.value);
-      };
-
-      const handleChangeCPU = (e: any) => {
-        setCPU(e.target.value);
-      };
-
-      const handleChangeMotherboard = (e: any) => {
-        setMotherboard(e.target.value);
-      };
-
     return (
         <div className="div-configurator-wrapper">
             <FormControl fullWidth>
@@ -80,9 +60,9 @@ const Configurator = () => {
                     id="monitor-select"
                     value={monitor ?? ""}
                     label="Monitor"
-                    onChange={handleChangeMonitor}
+                    onChange={(e) => setMonitor(e.target.value as string)}
                 >
-                    {monitors.map((x) => {return <MenuItem value={x.name as string}>{x.name}</MenuItem>})}
+                    {monitors.map((x) => {return <MenuItem key={x.id} value={x.name as string}>{x.name}</MenuItem>})}
                 </Select>
             </FormControl>
             <FormControl fullWidth>
@@ -92,9 +72,9 @@ const Configurator = () => {
                     id="keyboard-select"
                     value={keyboard ?? ""}
                     label="Keyboard"
-                    onChange={handleChangeKeyboard}
+                    onChange={(e) => setKeyboard(e.target.value as string)}
                 >
-                    {keyboards.map((x) => {return <MenuItem value={x.name as string}>{x.name}</MenuItem>})}
+                    {keyboards.map((x) => {return <MenuItem key={x.id} value={x.name as string}>{x.name}</MenuItem>})}
                 </Select>
             </FormControl>
             <FormControl fullWidth>
@@ -104,9 +84,9 @@ const Configurator = () => {
                     id="graphic-select"
                     value={graphic ?? ""}
                     label="Graphic Card"
-                    onChange={handleChangeGraphics}
+                    onChange={(e) => setGraphic(e.target.value as string)}
                 >
-                    {graphics.map((x) => {return <MenuItem value={x.name as string}>{x.name}</MenuItem>})}
+                    {graphics.map((x) => {return <MenuItem key={x.id} value={x.name as string}>{x.name}</MenuItem>})}
                 </Select>
             </FormControl>
             <FormControl fullWidth>
@@ -116,9 +96,9 @@ const Configurator = () => {
                     id="cpu-select"
                     value={cpu ?? ""}
                     label="CPU"
-                    onChange={handleChangeCPU}
+                    onChange={(e) => setCPU(e.target.value as string)}
                 >
-                    {cpus.map((x) => {return <MenuItem value={x.name as string}>{x.name}</MenuItem>})}
+                    {cpus.map((x) => {return <MenuItem key={x.id} value={x.name as string}>{x.name}</MenuItem>})}
                 </Select>
             </FormControl>
             <FormControl fullWidth>
@@ -128,9 +108,9 @@ const Configurator = () => {
                     id="motherboard-select"
                     value={motherboard ?? ""}
                     label="Motherboard"
-                    onChange={handleChangeMotherboard}
+                    onChange={(e) => setMotherboard(e.target.value as string)}
                 >
-                    {motherboards.map((x) => {return <MenuItem value={x.name as string}>{x.name}</MenuItem>})}
+                    {motherboards.map((x) => {return <MenuItem key={x.id} value={x.name as string}>{x.name}</MenuItem>})}
                 </Select>
             </FormControl>
         </div>
